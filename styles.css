@@ -1,0 +1,194 @@
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --light-cyan: #4abebd;
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Karla", sans-serif;
+    background-color: var(--light-gray);
+}
+
+/* Main app */
+#root {
+    min-height: 100vh;
+    width: 85%;
+    max-width: 650px;
+    margin: 0 auto;
+
+    /* Only for mobile */
+    padding: 75px 0;
+}
+
+@media (min-width: 768px) {
+    #root {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 0;
+    }
+}
+
+/* Card */
+.card {
+    display: grid;
+
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 768px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "com com"
+            "sub info";
+    }
+}
+
+.card > div {
+    padding: 30px;
+}
+
+@media (min-width: 768px) {
+    .card > div {
+        padding: 40px;
+    }
+}
+
+.card p {
+    margin: 0;
+}
+
+.card__community {
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    .card__community {
+        grid-area: com;
+    }
+}
+
+.card-content {
+    display: grid;
+    gap: 17.5px;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card__community-article__title {
+    color: var(--cyan);
+}
+
+.card__community-article__subtitle {
+    font-weight: 700;
+    color: var(--bright-yellow);
+}
+
+.card__community-article__text {
+    color: var(--grayish-blue);
+}
+
+.card__sub {
+    background-color: var(--cyan);
+}
+
+@media (min-width: 768px) {
+    .card__sub {
+        grid-area: sub;
+    }
+}
+
+.card__sub__title {
+    color: white;
+}
+
+.card__sub-information {
+    display: grid;
+    gap: 7.5px;
+}
+
+.card__sub-information-price-container {
+    display: flex;
+    align-items: center;
+}
+
+.card__sub-information-price-container__price {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+
+    margin-right: 10px;
+}
+
+.card__sub-information-price-container__time {
+    color: var(--light-gray);
+}
+
+.card__sub-information__access {
+    color: white;
+}
+
+.card__sub__button {
+    padding: 15px 5px;
+
+    border-style: none;
+    border-radius: 8px;
+    background-color: var(--bright-yellow);
+    box-shadow: 0px 3px 12px -5px rgba(0, 0, 0, 0.35);
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.card__sub__button:hover {
+    background-color: hsl(85, 78%, 51%);
+}
+
+.card__info {
+    background-color: var(--light-cyan);
+}
+
+@media (min-width: 768px) {
+    .card__info {
+        grid-area: info;
+    }
+}
+
+.card__info__title {
+    color: white;
+}
+
+.card__info-list {
+    display: grid;
+    gap: 3.5px;
+}
+
+.card__info-list__item {
+    font-size: 14px;
+    color: var(--light-gray);
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.card__info-list__item:hover {
+    color: var(--bright-yellow);
+}
